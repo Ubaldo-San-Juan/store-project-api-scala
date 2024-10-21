@@ -1,0 +1,40 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index()
+
+GET /saludo/                        controllers.HolaQrSof.saludo()
+
+#Users routes
+POST /api/users/                         controllers.UserController.createUser()
+GET /api/users/                          controllers.UserController.getUsers()
+GET /api/users/:id                       controllers.UserController.getUser(id: Long)
+DELETE /api/users/:id                    controllers.UserController.deleteUser(id: Long)
+PUT /api/users/:id                       controllers.UserController.updateUser(id: Long)
+
+#Categories routes
+POST /api/categories/                    controllers.CategoryController.createCategory()
+GET /api/categories/                     controllers.CategoryController.getCategories()
+GET /api/categories/:id                  controllers.CategoryController.getCategory(id: Long)
+DELETE /api/categories/:id               controllers.CategoryController.deleteCategory(id: Long)
+PUT /api/categories/:id                  controllers.CategoryController.updateCategory(id: Long)
+
+#suppliers routes
+POST /api/suppliers/                     controllers.SupplierController.createSupplier()
+GET /api/suppliers/                      controllers.SupplierController.getSuppliers()
+GET /api/suppliers/:id                   controllers.SupplierController.getSupplier(id: Long)
+DELETE /api/suppliers/:id                controllers.SupplierController.deleteSupplier(id: Long)
+PUT /api/suppliers/:id                   controllers.SupplierController.updateSupplier(id: Long)
+
+#Products routes
+POST /api/products/                      controllers.ProductController.createProduct()
+GET /api/products/                       controllers.ProductController.getProducts()
+GET /api/products/:id                    controllers.ProductController.getProduct(id: Long)
+PUT /api/products/:id                    controllers.ProductController.updateProduct(id: Long)
+DELETE /api/products/:id                 controllers.ProductController.deleteProduct(id: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
